@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .mjpec {
+        max-width: 95%;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <a href="?mode=snapshot">스냅샷 보기</a> |
+      <a href="?mode=stream">스트림 보기</a>
+    </div>
+    <br>
+
+    <div style="text-align:center;">
+      {% if mode == "#" %}
+        <img id="image" class="mjpec" />
+      {% elif mode == "snapshot" %}
+        <img id="image" class="mjpec" src="{% url 'snapshot' %}" />
+      {% elif mode == "stream" %}
+        <img id="image" class="mjpec" src="{% url 'stream' %}" />
+      {% endif %}
+    </div>
+
+    <hr>
+    <h3>snapshot history</h3>
+    <ul>
+      {% for snapshot_file in snapshot_history %}
+        <li><a href="/media/snapshot/{{ snapshot_file }}">{{ snapshot_file }}</a></li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
