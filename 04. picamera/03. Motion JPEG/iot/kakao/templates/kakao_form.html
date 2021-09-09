@@ -1,0 +1,22 @@
+<h1>Talk 보내기</h1>
+<div>
+  {% if messages %}
+    {% for msg in messages %}
+      <div>{{ msg.message }}</div>
+    {% endfor %}
+  {% endif %}
+
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <div>{{ form.text }}</div>
+    </div>
+    <div class="form-group">
+      <div>{{ form.web_url }}</div>
+    </div>
+    <div class="form-group">
+      <div>{{ form.mobile_web_url }}</div>
+    </div>
+    <input type="submit" value="보내기">
+  </form>
+</div>
