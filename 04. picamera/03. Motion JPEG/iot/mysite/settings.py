@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mjpeg',
     'kakao',
+    'mqtt',
 ]
 
 import os

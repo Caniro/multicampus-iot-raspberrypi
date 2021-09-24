@@ -16,7 +16,7 @@ url = 'http://192.168.117.20:8000/api/snapshot/'
 def capture():
     now = datetime.now()
     file_name = now.strftime('%Y%m%d_%H%M%S.jpg')
-    file_path = os.path.join('./images', file_name)
+    file_path = os.path.join('./image', file_name)
     camera.capture(file_path, use_video_port=True)
     print('capture....', file_path)
     return file_name, file_path
