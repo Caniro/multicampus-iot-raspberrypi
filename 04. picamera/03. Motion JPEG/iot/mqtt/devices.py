@@ -1,6 +1,7 @@
 from . import add_topic_handler
 from gpiozero import AngularServo
 from gpiozero.pins.pigpio import PiGPIOFactory
+from .car import Car
 
 # PiGPIOFactory : 지터링 방지. 전담 프로세스로 
 factory = PiGPIOFactory(host='localhost')
@@ -13,7 +14,8 @@ def move_angle(topic, value):
     angle = int(value)
     servo.angle = angle
 
+car = Car()
+
 def move_car(topic, value):
     print(topic, value)
-
-# add_topic_handler('control/camera', move_angle)
+    car.move(value)

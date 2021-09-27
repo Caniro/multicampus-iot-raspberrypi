@@ -1,3 +1,4 @@
+# PIR 센서로 감지하면 led 불켜고 카카오톡 알림 보내기
 from gpiozero import MotionSensor, LED
 import requests
 import json

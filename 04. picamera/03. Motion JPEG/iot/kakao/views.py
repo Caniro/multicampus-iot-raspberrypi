@@ -5,7 +5,7 @@ import requests
 from django.contrib import messages
 from .secret_config import client_id
 from .forms import KakaoTalkForm
-import mjpeg.sensors
+# import mjpeg.sensors
 
 class KakaoLoginView(TemplateView):
     template_name = "kakao_login.html"
